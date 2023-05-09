@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    // 使用 ESLint 推荐的基本规则
+    "eslint:recommended",
+    // 使用 React 插件推荐的规则
+    "plugin:react/recommended",
+    // 使用 TypeScript ESLint 推荐的规则
+    "plugin:@typescript-eslint/recommended",
+    // "prettier" 配置在 extends 中用于禁用与 Prettier 冲突的规则，而 "plugin:prettier/recommended" 配置在 extends 中用于集成 ESLint 和 Prettier
+    // "prettier"
+
+    // 在 ESLint 的配置中，不需要同时在 extends 和 plugins 中引入 "prettier"。
+
+    // 这个配置是通过 "eslint-plugin-prettier" 插件提供的规则集。它集成了 ESLint 和 Prettier，以确保代码风格和格式的一致性。它会自动运行 Prettier，并使用 Prettier 的配置来格式化代码。该规则集会检查代码中与格式相关的问题，并通过运行 Prettier 来修复这些问题。这样，你就可以使用 ESLint 进行代码静态分析和规则验证，同时确保代码格式符合 Prettier 的要求。
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [],
+  // 指定 javaScript 语言类型和风格
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  // 用于运行 Prettier 规则
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "no-unused-vars": "error",
+    "quotes": "error",
+    // 关闭 Vscode 的 prettier 验证(防止 Vscode 的 prettier 冲突)
+    "prettier/prettier": "error"
+  }
+}
