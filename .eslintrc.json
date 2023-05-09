@@ -5,11 +5,15 @@
   },
   "extends": [
     // 使用 ESLint 推荐的基本规则
-    "eslint:recommended",
-    // 使用 React 插件推荐的规则
-    "plugin:react/recommended",
+    // react-app 已包含 eslint:recommended
+    // "eslint:recommended",
+    // "plugin:@typescript-eslint/recommended" 是 "@typescript-eslint/eslint-plugin" 插件提供的一组推荐规则，用于检查和规范 TypeScript 代码。
     // 使用 TypeScript ESLint 推荐的规则
     "plugin:@typescript-eslint/recommended",
+    // 使用 React 插件推荐的规则
+    // "plugin:react/recommended",
+    // "react-app" 配置项是 Create React App 项目中预定义的扩展配置之一。当你使用 Create React App 创建一个新的 React 项目时，它会自动生成一个默认的 .eslintrc.json 文件，并将 "react-app" 添加到 extends 配置中。
+    "react-app",
     // "prettier" 配置在 extends 中用于禁用与 Prettier 冲突的规则，而 "plugin:prettier/recommended" 配置在 extends 中用于集成 ESLint 和 Prettier
     // "prettier"
 
@@ -26,11 +30,12 @@
     "sourceType": "module"
   },
   // 用于运行 Prettier 规则
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
   "rules": {
-    "no-unused-vars": "error",
-    "quotes": "error",
+    "no-unused-vars": "warn",
     // 关闭 Vscode 的 prettier 验证(防止 Vscode 的 prettier 冲突)
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    // "jsx-quotes": "warn"
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }
