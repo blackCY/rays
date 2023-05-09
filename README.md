@@ -7,4 +7,3 @@
 ## todoList
 
 - 项目名暂时没想好叫啥
-- 暂未添加 husky 和 commmitlint
